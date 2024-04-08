@@ -19,21 +19,6 @@ for (let tableSubHeadElem of tableSubHeadElems) {
 let tableBody = table.querySelector('tbody');
 
 
-
-let popUp = document.createElement('script');
-popUp.type = 'text/javascript';
-popUp.textContent = `
-    function popUp(datei) {
-        Message = dl_popUp(datei, "Message", 680, 400);
-        Message.focus();
-    }
-`;
-
-
-let PopupLink=document.getElementById('result_id_384414903668454');
-PopupLink.href='#384414903668454';
-
-
 for (let element of tableBody.querySelectorAll('tr')) {
     let averageElem = document.createElement('td');
     averageElem.className = 'tbdata';
