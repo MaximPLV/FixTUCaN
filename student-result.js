@@ -24,10 +24,8 @@ for (let element of tableBody.querySelectorAll('tr')) {
     averageElem.className = 'tbdata';
     averageElem.id = 'test';
     averageElem.style.textAlign = 'center';
-    console.log(element)
     let subElements = element.querySelectorAll('td.tbdata');
     subElements = element.children;
-    console.log(subElements)
     if (subElements[0].textContent.match(/\d\d-\d\d-\d\d\d\d.*/) && subElements[1].querySelector('a') != null) {
         let onclick = subElements[1].querySelector('a').getAttribute('onclick');
         let url = onclick
@@ -45,16 +43,13 @@ function myFetch(url, averageElem, insertParentElem, insertBeforeElem) {
     fetch(url)
         .then(response => response.text())
         .then(data => {
-            console.log(data);
             let href = data.match(/<a href=".*" class="link" title="Notenspiegel">/)[0];
             href = href.replace('popUp', ' dl_popUp')
                 .replace('javascript: dl_popUp(\'', '')
                 .replace('\')', '')
                 .replace('>', ' target="_blank" rel="noopener noreferrer">');
-            console.log(averageElem != null);
-            console.log(href);
+
             averageElem.innerHTML = href + '<b>Ø</b>' + '</a>';
-            console.log(averageElem);
             insertParentElem.insertBefore(averageElem, insertBeforeElem);
         })
         .catch(error => console.error('Fehler beim Laden der Daten:', error));
