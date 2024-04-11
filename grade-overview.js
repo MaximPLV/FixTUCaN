@@ -1,5 +1,3 @@
-console.log("hello");
-
 let table = document.querySelector('table.nb');
 let grades = table.querySelectorAll('td.tbsubhead');
 console.log(grades);
