@@ -37,7 +37,7 @@ function runAddon() {
             subElements[5].style.fontWeight = 'bold';
 
             let onclick = subElements[1].querySelector('a').getAttribute('onclick');
-            let url = onclick
+            let url = 'https://www.tucan.tu-darmstadt.de' + onclick
                 .replace('javascript: dl_popUp(\'', '')
                 .replace('\',\'Ergebnisdetails\',800,600);', '');
             let statusElement = subElements[6];
