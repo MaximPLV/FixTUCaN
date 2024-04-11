@@ -1,15 +1,18 @@
 {
-  "manifest_version": 3,
-  "version":"1.0",
-  "name":"FixTUCaN",
-  "content_scripts":[
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "FixTUCaN",
+  "content_scripts": [
     {
-      "matches":["https://www.tucan.tu-darmstadt.de/scripts/mgrqispi.dll?APPNAME=CampusNet&PRGNAME=GRADEOVERVIEW*"],
-      "js":["grade-overview.js"]
+      "matches": ["https://www.tucan.tu-darmstadt.de/scripts/mgrqispi.dll?APPNAME=CampusNet&PRGNAME=GRADEOVERVIEW*"],
+      "js": ["grade-overview.js"]
     },
     {
       "matches": ["https://www.tucan.tu-darmstadt.de/scripts/mgrqispi.dll?APPNAME=CampusNet&PRGNAME=STUDENT_RESULT*"],
       "js": ["student-result.js"]
     }
+  ],
+  "permissions": [
+    "https://www.tucan.tu-darmstadt.de/*"
   ]
 }
