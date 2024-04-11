@@ -5,7 +5,7 @@ if (userIsLoggedIn()) {
 }
 
 function runAddon() {
-//Ø
+
     let table = document.querySelector('table.nb.list.students_results');
 
     let tableSubHead = table.querySelector('thead > tr.tbsubhead');
